@@ -1,0 +1,15 @@
+# Datasets (large files, not needed on Heroku runtime)
+tmdb_5000_movies.csv
+tmdb_5000_credits.csv
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Python caching
+__pycache__/
+*.pyc
+
+# Local IDE configuration files
+.vscode/
+.idea/
+.gemini/

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineMatch | AI-Powered Movie Recommender</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <!-- Background glow decorations -->
+    <div class="glow-bg">
+        <div class="glow-sphere glow-1"></div>
+        <div class="glow-sphere glow-2"></div>
+    </div>
+
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="logo">
+                <i class="fa-solid fa-film logo-icon"></i>
+                <span class="logo-text">Cine<span>Match</span></span>
+            </div>
+            <div class="header-tag">
+                <span class="badge">v1.0 (Content-Based)</span>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Hero Search Section -->
+            <section class="hero-section">
+                <h1 class="hero-title">Find Your Next <span class="text-gradient">Cinematic Journey</span></h1>
+                <p class="hero-subtitle">Enter a movie you love, and our smart engine will recommend 8 highly matching movies based on genre, plot, cast, and directors.</p>
+                
+                <!-- Search container -->
+                <div class="search-box-container">
+                    <div class="search-input-wrapper">
+                        <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                        <input type="text" id="movie-search" placeholder="Type a movie title (e.g. Avatar, The Dark Knight, Iron Man...)" autocomplete="off">
+                        <button id="clear-search-btn" class="clear-btn" style="display: none;">
+                            <i class="fa-solid fa-xmark"></i>
+                        </button>
+                    </div>
+                    <button id="search-btn" class="search-submit-btn">
+                        <span>Recommend</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                    
+                    <!-- Autocomplete dropdown suggestions list -->
+                    <ul id="autocomplete-list" class="autocomplete-dropdown" style="display: none;"></ul>
+                </div>
+            </section>
+
+            <!-- Loading State -->
+            <div id="loader" class="loader-container" style="display: none;">
+                <div class="custom-loader"></div>
+                <p>Analyzing cinematic tags and plot profiles...</p>
+            </div>
+
+            <!-- Error State -->
+            <div id="error-message" class="error-container" style="display: none;">
+                <i class="fa-solid fa-circle-exclamation error-icon"></i>
+                <p id="error-text">Movie not found. Please try another title.</p>
+            </div>
+
+            <!-- Selected Movie Details Display -->
+            <section id="selected-movie-section" class="selected-movie-section" style="display: none;">
+                <h2 class="section-title"><i class="fa-solid fa-circle-info"></i> Selected Movie</h2>
+                <div class="movie-details-card glass-panel">
+                    <div class="movie-poster-wrapper">
+                        <img id="selected-movie-poster" src="" alt="Movie Poster" class="movie-poster">
+                        <div class="poster-overlay"></div>
+                    </div>
+                    <div class="movie-info-content">
+                        <h3 id="selected-movie-title" class="movie-title">Movie Title</h3>
+                        
+                        <div class="movie-meta-row">
+                            <span class="meta-item"><i class="fa-solid fa-clapperboard"></i> <span id="selected-movie-director">Director Name</span></span>
+                        </div>
+                        
+                        <div id="selected-movie-genres" class="genre-tags-container">
+                            <!-- Genre pills injected here -->
+                        </div>
+                        
+                        <div class="movie-description-block">
+                            <h4>Overview</h4>
+                            <p id="selected-movie-overview">Movie overview text...</p>
+                        </div>
+                        
+                        <div class="movie-cast-block">
+                            <h4>Key Cast</h4>
+                            <div id="selected-movie-cast" class="cast-tags-container">
+                                <!-- Cast members injected here -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Recommendations Grid Section -->
+            <section id="recommendations-section" class="recommendations-section" style="display: none;">
+                <h2 class="section-title"><i class="fa-solid fa-sparkles"></i> Recommended Matches</h2>
+                <div id="recommendations-grid" class="recommendations-grid">
+                    <!-- Recommendation cards injected here -->
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="app-footer">
+            <p>&copy; 2026 CineMatch. Powered by TMDB & Content Similarity Clustering.</p>
+        </footer>
+    </div>
+
+    <!-- Custom Javascript -->
+    <script src="/static/js/main.js"></script>
+</body>
+</html>
