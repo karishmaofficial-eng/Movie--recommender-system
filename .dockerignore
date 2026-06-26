@@ -1,0 +1,19 @@
+# Exclude raw datasets from Docker image context
+tmdb_5000_movies.csv
+tmdb_5000_credits.csv
+
+# Python caches and artifacts
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Notebook checkpoints
+.ipynb_checkpoints/
+
+# Local metadata
+.git/
+.gitignore
+.gemini/
+Dockerfile
+.dockerignore
